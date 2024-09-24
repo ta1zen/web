@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кінотеатр "Оріон"</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f1de;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .header {
+            background-color: #006d77;
+            color: #edf6f9;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        .content {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 30px;
+            background-color: #e29578;
+        }
+        .movies-sidebar {
+            width: 20%;
+            background-color: #ffddd2;
+            padding: 20px;
+            border-radius: 10px;
+            height: 15vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .movie-details {
+            width: 75%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .movie-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+            background-color: #edf6f9;
+            transition: all 0.3s ease;
+        }
+        .movie-card:hover {
+            background-color: #006d77;
+            color: #fff;
+        }
+        .movie-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        .movie-price {
+            font-size: 1.2rem;
+            color: #83c5be;
+        }
+        .purchase-btn {
+            padding: 10px 15px;
+            background-color: #ffddd2;
+            color: #333;
+            border: 2px solid #006d77;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .purchase-btn:hover {
+            background-color: #83c5be;
+            color: #fff;
+        }
+        .notification {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #006d77;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <h1 id="mainHeading">Вітаємо у кінотеатрі "Оріон"</h1>
+</header>
+
+<div class="content">
+    <div class="movies-sidebar">
+        <p id="notification" class="notification"></p>
+    </div>
+    
+    <div class="movie-details" id="movieList">
+        <div class="movie-card" id="movie1">
+            <div>
+                <h2 class="movie-title">Матриця</h2>
+                <p class="movie-price">Ціна: 160 грн</p>
+            </div>
+            <button class="purchase-btn">Придбати квиток</button>
+        </div>
+        <div class="movie-card" id="movie2">
+            <div>
+                <h2 class="movie-title">Аватар</h2>
+                <p class="movie-price">Ціна: 200 грн</p>
+            </div>
+            <button class="purchase-btn">Придбати квиток</button>
+        </div>
+        <div class="movie-card" id="movie3">
+            <div>
+                <h2 class="movie-title">Гладіатор</h2>
+                <p class="movie-price">Ціна: 140 грн</p>
+            </div>
+            <button class="purchase-btn">Придбати квиток</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const mainHeading = document.getElementById('mainHeading');
+    mainHeading.addEventListener('mouseover', function() {
+        mainHeading.style.color = '#83c5be';
+        mainHeading.textContent = 'Завітайте до кінотеатру "Оріон"!';
+    });
+    mainHeading.addEventListener('mouseout', function() {
+        mainHeading.textContent = 'Вітаємо у кінотеатрі "Оріон"';
+        mainHeading.style.color = '#edf6f9';
+
+    });
+    
+    const buyButtons = document.querySelectorAll('.purchase-btn');
+    const movieCards = document.querySelectorAll('.movie-card');
+    const notificationElement = document.getElementById('notification');
+    
+    const movieTitles = document.getElementsByClassName('movie-title');
+    
+    for (let i = 0; i < movieTitles.length; i++) {
+        console.log(`Назва фільму ${i + 1}: ${movieTitles[i].textContent}`);
+    }
+    
+    buyButtons.forEach(function(button, idx) {
+        button.addEventListener('click', function() {
+            movieCards.forEach(function(card) {
+                card.style.backgroundColor = '#edf6f9';
+                card.style.color = '#333';
+            });
+            movieCards[idx].style.backgroundColor = '#006d77';
+            movieCards[idx].style.color = '#fff';
+            
+            const movieTitle = movieCards[idx].querySelector('.movie-title').textContent;
+            notificationElement.textContent = `Ви придбали квиток на "${movieTitle}"!`;
+        });
+    });
+    </script>
+    
+
+</body>
+</html>
