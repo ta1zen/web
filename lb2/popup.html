@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Volume Controller</title>
+    <style>
+        body {
+            width: 200px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+        #volumeSlider {
+            width: 100%;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3>Volume Control</h3>
+    <input type="range" id="volumeSlider" min="0" max="100" value="100" />
+    <p>Volume: <span id="volumeValue">100</span>%</p>
+    <button id="muteButton">Mute</button>
+    <button id="unmuteButton">Unmute</button>
+
+    <script src="popup.js"></script>
+</body>
+</html>
