@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Notes</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> -->
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="main-page" class="container">
+            <img src="notes-icon.png">
+            <button class="priority-btn" id="openPriorityFirst">First</button>
+            <button class="priority-btn" id="openPrioritySecond">Second</button>
+            <button class="priority-btn" id="openPriorityLess">Less</button>
+        </div>
+
+        <div id="task-page1" style="display: none;" class="container">
+            <button class="back-btn" id="goback">⬅ Back</button>
+    
+            <div class="task-input">
+                <input type="text" id="input-field1" placeholder="Add Task...">
+                <button id="add-button1">+</button>
+            </div>
+    
+            <ul id="Notes-list1"></ul> 
+        </div>
+
+        <div id="task-page2" style="display: none;" class="container">
+            <button class="back-btn" id="goback">⬅ Back</button>
+    
+            <div class="task-input">
+                <input type="text" id="input-field2" placeholder="Add Task...">
+                <button id="add-button2">+</button>
+            </div>
+    
+            <ul id="Notes-list2"></ul> 
+        </div>
+
+        <div id="task-page3" style="display: none;" class="container">
+            <button class="back-btn" id="goback">⬅ Back</button>
+    
+            <div class="task-input">
+                <input type="text" id="input-field3" placeholder="Add Task...">
+                <button id="add-button3">+</button>
+            </div>
+    
+            <ul id="Notes-list3"></ul> 
+        </div>
+    
+        <script src="script.js" type = "module"></script>
+    </body>
+</html>
